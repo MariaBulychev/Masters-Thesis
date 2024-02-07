@@ -93,7 +93,7 @@ python3 run_autoattack.py --pcbm_path=$pcbm_path --out-dir=$OUT_DIR --eps=0.001 
 
 ### Generating explanations and saliency maps  
 
-The following script will generate explanations (top-7 concepts and their scores, implementation based on [6](https://arxiv.org/pdf/2304.06129.pdf)) as well as saliency maps for the top-7 concepts identified in an image. The code only considers images where the original image has been classified correctly and the adversarial image incorrectly. It breaks after 10 such images have been found. You need to specify the directory where the adversarial images (w.r.t. the specified norm and epsilon) from the previous step have been saved. 
+The following script will generate explanations (top-7 concepts and their scores, implementation based on [[6]](https://arxiv.org/pdf/2304.06129.pdf)) as well as saliency maps for the top-7 concepts identified in an image. The code only considers images where the original image has been classified correctly and the adversarial image incorrectly. It breaks after 10 such images have been found. You need to specify the directory where the adversarial images (w.r.t. the specified norm and epsilon) from the previous step have been saved. 
 
 ```bash
 ADV_DIR = /path/to/adversarial/images
