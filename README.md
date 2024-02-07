@@ -93,8 +93,7 @@ python3 run_autoattack.py --pcbm_path=$pcbm_path --out-dir=$OUT_DIR --eps=0.001 
 
 ### Generating explanations and saliency maps  
 
-The following script will generate explanations (top-7 concepts and their scores) as well as 
-saliency maps for the top-7 concepts identified in an image.  The code only considers images where the original image has been classified correctly and the adversarial image incorrectly. It breaks after 10 such images have been found. You need to specify the directory where the adversarial images (w.r.t. the specified norm and epsilon) from the previous step have been saved. 
+The following script will generate explanations (top-7 concepts and their scores, implementation based on [6](https://arxiv.org/pdf/2304.06129.pdf)) as well as saliency maps for the top-7 concepts identified in an image. The code only considers images where the original image has been classified correctly and the adversarial image incorrectly. It breaks after 10 such images have been found. You need to specify the directory where the adversarial images (w.r.t. the specified norm and epsilon) from the previous step have been saved. 
 
 ```bash
 ADV_DIR = /path/to/adversarial/images
@@ -153,7 +152,7 @@ python3 train_pcbm_h.py --concept-bank="${OUTPUT_DIR}/broden_clip:RN50_0.1_50.pk
 
 ---
 ## References:
-<a id="ref1">[1]</a> Mert Yuksekgonul, Maggie Wang, and James Zou, *Post-hoc Concept Bottleneck Models*, 2023. [PDF](https://arxiv.org/pdf/2205.15480.pdf)
+<a id="ref1">[1]</a> Mert Yuksekgonul, Maggie Wang, and James Zou, *Post-hoc Concept Bottleneck Models*, 2023. [PDF](https://arxiv.org/pdf/2205.15480.pdf) [Github](https://github.com/mertyg/post-hoc-cbm)
 
 <a id="ref1">[2]</a> Abubakar Abid, Mert Yuksekgonul, and James Zou, Meaningfully debugging model mistakes using conceptual counterfactual explanations, 2022. [PDF](https://arxiv.org/pdf/2106.12723.pdf)
 
@@ -163,3 +162,6 @@ python3 train_pcbm_h.py --concept-bank="${OUTPUT_DIR}/broden_clip:RN50_0.1_50.pk
 
 <a id="ref1">[5]</a> Jeremy Kawahara, Sara Daneshvar, Giuseppe Argenziano, and Ghassan Hamarneh, Seven-point checklist and skin lesion classification using multitask multimodal neural nets, IEEE
 Journal of Biomedical and Health Informatics 23 (2019), no. 2, 538–546. [PDF](https://ieeexplore.ieee.org/document/8333693)
+
+<a id="ref1">[6]</a> Tuomas Oikarinen, Subhro Das, Lam M Nguyen, and Tsui-Wei Weng, Label-free concept bottleneck models, International Conference on Learning Representations, 2023. [PDF](https://arxiv.org/pdf/2304.06129.pdf) [Github](https://github.com/Trustworthy-ML-Lab/Label-free-CBM)
+
